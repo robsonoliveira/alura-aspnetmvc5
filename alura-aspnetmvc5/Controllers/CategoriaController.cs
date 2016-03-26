@@ -24,7 +24,6 @@ namespace alura_aspnetmvc5.Controllers
         {
             new CategoriasDAO().Adiciona(categoria);
             return RedirectToAction("Index","Categoria");
-
         }
     }
 }
