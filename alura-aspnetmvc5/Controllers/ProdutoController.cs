@@ -7,6 +7,7 @@ namespace alura_aspnetmvc5.Controllers
     public class ProdutoController : Controller
     {
         // GET: Produto
+        [Route("produtos", Name = "ListaProdutos")]
         public ActionResult Index()
         {
             var dao = new ProdutosDAO();
@@ -45,6 +46,7 @@ namespace alura_aspnetmvc5.Controllers
             return RedirectToAction("Index", "Produto");
         }
 
+        [Route("produtos/{id}", Name ="VisualizaProduto")]
         public ActionResult Visualiza(int id)
         {
             var produto = new ProdutosDAO().BuscaPorId(id);

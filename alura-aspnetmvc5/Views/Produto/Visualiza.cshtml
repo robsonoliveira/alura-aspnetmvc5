@@ -19,7 +19,8 @@
         Descricao: @ViewBag.Produto.Descricao<br />
         Categoria: @ViewBag.Produto.Categoria.Nome<br />
         
-        @Html.ActionLink("Voltar para a lista", "Index", "Produto")
+        @Html.RouteLink("Volta para a lista", "ListaProdutos")
+       <!-- @Html.ActionLink("Voltar para a lista", "Index", "Produto")-->
 </div>
 </body>
 </html>
