@@ -11,8 +11,7 @@ namespace alura_aspnetmvc5.Controllers
         {
             var dao = new ProdutosDAO();
             var produtos = dao.Lista();
-            ViewBag.Produtos = produtos;
-            return View();
+            return View(produtos);
         }
 
         public ActionResult Form()
@@ -22,14 +21,15 @@ namespace alura_aspnetmvc5.Controllers
 
             return View();
         }
-        
+
         [HttpPost]
-        public ActionResult Adiciona(Produto produto) {
+        public ActionResult Adiciona(Produto produto)
+        {
 
             // CUSTOMIZANDO REGRAS DE VALIDAÇÃO
             var IdComRegraDeValorMinimo = 1;
 
-            if(produto.CategoriaId.Equals(IdComRegraDeValorMinimo) && produto.Preco < 100)
+            if (produto.CategoriaId.Equals(IdComRegraDeValorMinimo) && produto.Preco < 100)
             {
                 ModelState.AddModelError("produto.ValorMinimo", "Produto de Categoria " + IdComRegraDeValorMinimo + " com valor abaixo de 100,00.");
             }
@@ -43,6 +43,13 @@ namespace alura_aspnetmvc5.Controllers
             }
             new ProdutosDAO().Adiciona(produto);
             return RedirectToAction("Index", "Produto");
+        }
+
+        public ActionResult Visualiza(int id)
+        {
+            var produto = new ProdutosDAO().BuscaPorId(id);
+            ViewBag.Produto = produto;
+            return View();
         }
     }
 }
