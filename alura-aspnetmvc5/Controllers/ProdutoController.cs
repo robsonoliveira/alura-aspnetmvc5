@@ -53,5 +53,15 @@ namespace alura_aspnetmvc5.Controllers
             ViewBag.Produto = produto;
             return View();
         }
+
+        public ActionResult DecrementaQtd(int id) {
+            var produtoDAO = new ProdutosDAO();
+            var produto= produtoDAO.BuscaPorId(id);
+
+            produto.Quantidade--;
+            produtoDAO.Atualiza(produto);
+
+            return Json(produto);
+        }
     }
 }
