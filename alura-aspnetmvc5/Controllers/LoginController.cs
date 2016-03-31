@@ -11,6 +11,7 @@ namespace alura_aspnetmvc5.Controllers
             return View();
         }
 
+        [ValidateAntiForgeryToken]
         public ActionResult Autentica(string login, string senha) {
             UsuariosDAO dao = new UsuariosDAO();
             var usuario = dao.Busca(login, senha);

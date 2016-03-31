@@ -1,8 +1,6 @@
-﻿using System.Web.Mvc;
-using alura_aspnetmvc5.DAO;
+﻿using alura_aspnetmvc5.DAO;
 using alura_aspnetmvc5.Models;
-using System;
-using alura_aspnetmvc5.Filtros;
+using System.Web.Mvc;
 
 namespace alura_aspnetmvc5.Controllers
 {
