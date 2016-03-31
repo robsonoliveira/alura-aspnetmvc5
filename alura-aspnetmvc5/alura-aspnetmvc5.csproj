@@ -156,6 +156,7 @@
     <Compile Include="DAO\CategoriasDAO.cs" />
     <Compile Include="DAO\ProdutosDAO.cs" />
     <Compile Include="DAO\UsuariosDAO.cs" />
+    <Compile Include="Filtros\AutorizacaoFilterAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

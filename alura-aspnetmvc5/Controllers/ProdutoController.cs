@@ -2,6 +2,8 @@
 using alura_aspnetmvc5.DAO;
 using alura_aspnetmvc5.Models;
 using System;
+using alura_aspnetmvc5.Filtros;
+
 namespace alura_aspnetmvc5.Controllers
 {
     public class ProdutoController : Controller
@@ -24,9 +26,9 @@ namespace alura_aspnetmvc5.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Adiciona(Produto produto)
         {
-
             // CUSTOMIZANDO REGRAS DE VALIDAÇÃO
             var IdComRegraDeValorMinimo = 1;
 
